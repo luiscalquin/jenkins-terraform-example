@@ -27,7 +27,7 @@ pipeline {
 
         stage('terraform') {
             steps {
-                sh '/opt/homebrew/bin/terraform apply -auto-approve -no-color'
+                powershell 'c:\terraform\terraform.exe apply -auto-approve -no-color'
             }
         }
     }    
