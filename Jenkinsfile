@@ -16,7 +16,7 @@ pipeline {
         }
     stage('tfsec') {
       steps {
-        sh ' docker run --rm -v "$(pwd):/src" aquasec/tfsec .'
+        powershell 'docker run --rm -v "$(pwd):/src" aquasec/tfsec .'
       }
     }
     stage('Approval for Terraform') {
@@ -30,7 +30,7 @@ pipeline {
                 sh '/opt/homebrew/bin/terraform apply -auto-approve -no-color'
             }
         }
-    }
+    }    
     post {
         always {
             cleanWs()
