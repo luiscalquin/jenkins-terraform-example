@@ -16,7 +16,7 @@ pipeline {
         }
     stage('tfsec') {
       steps {
-        powershell 'docker run -d -p 80:80 docker/getting-started .'
+        powershell 'docker run -d -p 8001:8001 docker/getting-started .'
       }
     }
     stage('Approval for Terraform') {
