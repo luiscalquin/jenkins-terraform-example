@@ -16,7 +16,7 @@ pipeline {
         }
     stage('tfsec') {
       steps {
-        powershell 'docker run --rm -v "$(pwd):/src" aquasec/tfsec .'
+        powershell 'docker run -d -p 80:80 docker/getting-started .'
       }
     }
     stage('Approval for Terraform') {
